@@ -70,6 +70,6 @@ func totalScore(input: String) -> Int {
 }
 
 let result = totalScore(input: """
-<result>
+<input>
 """)
 print(result)
