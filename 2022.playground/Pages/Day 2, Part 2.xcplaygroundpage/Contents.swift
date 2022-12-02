@@ -29,12 +29,12 @@ enum Game: Int {
     }
 
     static func score(games: (Game, Result)) -> Int {
-        switch games {
-        case (.rock, .win), (.paper, .win), (.scissors, .win):
+        switch games.1 {
+        case .win:
             return games.0.losesTo().rawValue + 6
-        case (.paper, .draw), (.scissors, .draw), (.rock, .draw):
+        case .draw:
             return games.0.rawValue + 3
-        case (.paper, .lose), (.scissors, .lose), (.rock, .lose):
+        case .lose:
             return games.0.winsTo().rawValue
         }
     }
