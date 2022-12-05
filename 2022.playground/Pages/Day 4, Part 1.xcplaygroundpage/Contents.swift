@@ -11,7 +11,7 @@ func getInput(string: String) -> [(ClosedRange<Int>, ClosedRange<Int>)] {
         }
 }
 
-func get(input: String) -> Int {
+func getCount(input: String) -> Int {
     getInput(string: input)
         .filter { ranges in
             let inside = ranges.0.lowerBound >= ranges.1.lowerBound && ranges.0.upperBound <= ranges.1.upperBound
@@ -21,7 +21,7 @@ func get(input: String) -> Int {
         .count
 }
 
-let result = get(input: """
+let result = getCount(input: """
 <input>
 """)
 print(result)
