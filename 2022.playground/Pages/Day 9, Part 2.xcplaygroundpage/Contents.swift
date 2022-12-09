@@ -50,16 +50,12 @@ struct Position: Hashable {
         let dx = position.x - x
         let dy = position.y - y
 
-        if dx == 0 {
+        if dx == 0 || dy == 0 {
+            x += dx / 2
             y += dy / 2
-        } else if dy == 0 {
-            x += dx / 2
-        } else if abs(dx) == 2 {
-            x += dx / 2
-            y += dy.signum()
-        } else if abs(dy) == 2 {
+        } else if abs(dx) == 2 || abs(dy) == 2 {
             x += dx.signum()
-            y += dy / 2
+            y += dy.signum()
         }
     }
 }
