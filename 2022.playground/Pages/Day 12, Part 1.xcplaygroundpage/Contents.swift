@@ -84,7 +84,7 @@ func getStepCount(input: String) -> Int {
                         endPosition = newPosition
                     case .height(let height):
                         let previousHeight = current.square(from: map).height
-                        guard height == previousHeight || height == previousHeight + 1 || height < previousHeight else {
+                        guard height <= previousHeight + 1 else {
                             break
                         }
                         paths[newPosition] = current
